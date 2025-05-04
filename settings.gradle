@@ -1,0 +1,8 @@
+rootProject.name = 'BookLibrary'
+include 'Model'
+include 'Persistence'
+include 'Server'
+include 'Networking'
+include 'Services'
+include 'Client'
+

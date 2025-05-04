@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="HomeController" prefHeight="496.0" prefWidth="726.0"
+      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane prefHeight="657.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Biblioteca">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane prefHeight="466.0" prefWidth="726.0">
+                                    <children>
+                                        <DatePicker fx:id="datePicker" layoutX="36.0" layoutY="47.0"
+                                                    prefHeight="31.0" prefWidth="174.0" />
+                                        <ListView fx:id="bibliotecaListView" layoutX="280.0" layoutY="8.0"
+                                                  prefHeight="450.0" prefWidth="445.0" />
+                                        <Button fx:id="rentButton" layoutX="35.0" layoutY="103.0"
+                                                mnemonicParsing="false" prefHeight="55.0" prefWidth="176.0"
+                                                text="Inchiriaza" onAction="#handleRent" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Profil">
+                    <content>
+                        <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ListView fx:id="rentedBooksListView" layoutX="14.0" layoutY="223.0"
+                                          prefHeight="230.0" prefWidth="700.0" />
+                                <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0"
+                                       prefHeight="26.0" prefWidth="200.0" text="Nume:" />
+                                <Label layoutX="320.0" layoutY="194.0" prefHeight="19.0"
+                                       prefWidth="86.0" text="Carti inchiriate" />
+                                <Label fx:id="phoneLabel" layoutX="14.0" layoutY="40.0"
+                                       prefHeight="27.0" prefWidth="200.0" text="Numar de telefon:" />
+                                <Label fx:id="roleLabel" layoutX="14.0" layoutY="67.0"
+                                       prefHeight="21.0" prefWidth="200.0" text="Rol:" />
+                                <Label fx:id="rentedCountLabel" layoutX="16.0" layoutY="89.0"
+                                       prefHeight="30.0" prefWidth="250.0" text="Nr. de carti inchiriate:" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

@@ -1,0 +1,6 @@
+package rpcprotocol;
+
+
+public enum ResponseType {
+    OK, ERROR, NEW_RENT, BOOKS_UPDATE, SEND_ALL_RENTS, SEND_ALL_BOOKS, SEND_BOOK_COPY_BY_ID, USER_LOGGED_IN, RENTS_UPDATE;
+}

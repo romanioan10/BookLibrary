@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f7731a3-03af-459e-b848-8d1ac3ee4e12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/LoginMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/java/StartRpcClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/aplicatie.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/BookCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/IEntitate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/Rent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/src/main/java/Domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/DTOs/BookCopyDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/DTOs/BookDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/DTOs/DTOUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/DTOs/RentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/DTOs/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/AplicatieClientRpcWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/AplicatieServicesRpcProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/RequestType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/rpcprotocol/ResponseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/utils/AbsConcurrentServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/utils/AbstractServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/utils/ChatRpcConcurrentServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Networking/src/main/java/utils/ServerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Interfaces/IBookCopyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Interfaces/IBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Interfaces/IRentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Interfaces/IRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Interfaces/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Repository/BookCopyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Repository/BookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Repository/RentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/java/Utils/JdbcUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/library.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/ServicesImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/java/StartRpcServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/aplicatieserver.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/src/main/java/Service/AppException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/src/main/java/Service/IObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/src/main/java/Service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/Server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Persistence">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Client">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Services">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2v8APv45J1fKoJH4Z94jeQYbdfO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cristina/IdeaProjects/BookLibrary/Client/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Client\src\main\resources" />
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Client\src\main\java" />
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Services\src\main\java" />
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Networking\src\main\java" />
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Client\src\main\resources" />
+      <recent name="C:\Users\cristina\IdeaProjects\BookLibrary\Server\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.BookLibrary:Client [run]">
+    <configuration name="BookLibrary:Client [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BookLibrary:Server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BookLibrary:Server [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BookLibrary:Client [run]" />
+        <item itemvalue="Gradle.BookLibrary:Server [run]" />
+        <item itemvalue="Gradle.BookLibrary:Server [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f7731a3-03af-459e-b848-8d1ac3ee4e12" name="Changes" comment="" />
+      <created>1743516309099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743516309099</updated>
+      <workItem from="1743516310188" duration="791000" />
+      <workItem from="1743521831886" duration="6758000" />
+      <workItem from="1743571286158" duration="1257000" />
+      <workItem from="1744112973510" duration="9243000" />
+      <workItem from="1744124888610" duration="512000" />
+      <workItem from="1744125447237" duration="600000" />
+      <workItem from="1746271412211" duration="11303000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
