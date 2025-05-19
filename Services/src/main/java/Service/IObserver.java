@@ -1,6 +1,5 @@
 package Service;
 
-import Domain.BookCopy;
 import Domain.Rent;
 
 import java.util.Collection;

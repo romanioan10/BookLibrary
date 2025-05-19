@@ -88,14 +88,11 @@ public class ServicesImpl implements IService {
 
     @Override
     public synchronized void rentBook(User user, BookCopy bookCopy, LocalDate startDate, LocalDate endDate, String status) throws AppException {
-        // 1. Creează închirierea
         Rent rent = new Rent(user, bookCopy, startDate, endDate, status);
         rentRepository.add(rent);
 
-        // 2. Actualizează statusul în memorie
         bookCopy.setStatus(BookCopy.Status.BORROWED);
 
-        // 3. Actualizează și în baza de date
         System.out.println("BEFORE UPDATE → BookCopy ID: " + bookCopy.getId());
         BookCopy before = bookCopyRepository.findOne(bookCopy.getId());
         System.out.println("Status in DB BEFORE update: " + before.getStatus());
@@ -105,7 +102,6 @@ public class ServicesImpl implements IService {
         BookCopy after = bookCopyRepository.findOne(bookCopy.getId());
         System.out.println("AFTER UPDATE → BookCopy ID: " + after.getId() + ", Status in DB: " + after.getStatus());
 
-        // 4. Notifică toți clienții conectați
         notifyClientsUpdate();
     }
 
@@ -136,6 +132,35 @@ public class ServicesImpl implements IService {
         return copy;
     }
 
+    @Override
+    public synchronized void returnBook(int rentId) throws AppException {
+        // 1. Caută împrumutul după ID
+        Rent rent = rentRepository.findOne(rentId);
+        if (rent == null) {
+            throw new AppException("Rent not found with id " + rentId);
+        }
+
+        // 2. Ia BookCopy-ul asociat și setează statusul în AVAILABLE
+        BookCopy copy = rent.getBookCopy();
+        copy.setStatus(BookCopy.Status.AVAILABLE);
+
+        // 3. Actualizează în baza de date
+        bookCopyRepository.update(copy, copy.getId());
+
+        // 4. Șterge împrumutul
+        rentRepository.remove(rentId);
+
+        // 5. Notifică toți observerii conectați
+        notifyClientsUpdate();
+
+        // Debug info
+        System.out.println("→ Rent " + rentId + " removed. BookCopy " + copy.getId() + " is now AVAILABLE.");
+    }
+
+
+
+
+
     private void notifyClientsUpdate() throws AppException {
         List<BookCopy> availableCopies = bookCopyRepository.findByStatus("AVAILABLE");
         List<Integer> availableIds = availableCopies.stream()
@@ -148,11 +173,13 @@ public class ServicesImpl implements IService {
 
         for (IObserver client : loggedClients.values()) {
             if (client != null) {
-                executor.execute(() -> {
+                executor.execute(() ->
+                {
                     try {
                         System.out.println("→ Notifying client: updateBookCopies + updateRents");
                         client.updateBookCopies(availableIds);
                         client.updateRents(allRents);
+
                     } catch (AppException e) {
                         System.err.println("Error notifying client updates: " + e.getMessage());
                     }

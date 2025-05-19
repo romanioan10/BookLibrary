@@ -52,6 +52,7 @@ public class HomeController implements IObserver {
     @FXML
     private Label rentedCountLabel;
 
+
     public void initialize() {
         bibliotecaListView.setItems(availableBooks);
         rentedBooksListView.setItems(userRents);
@@ -204,6 +205,7 @@ public class HomeController implements IObserver {
             showError("Could not load available books: " + e.getMessage());
         }
     }
+
     // === Helpers ===
 
     private void showError(String message) {

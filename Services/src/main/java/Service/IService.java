@@ -23,4 +23,6 @@ public interface IService
     public void addRent(Rent rent) throws AppException;
     BookCopy getBookCopyById(int id) throws AppException;
 
+    void returnBook(int rentId) throws AppException;
+
 }

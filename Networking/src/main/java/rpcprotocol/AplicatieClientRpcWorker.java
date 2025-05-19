@@ -115,9 +115,21 @@ public class AplicatieClientRpcWorker implements Runnable, IObserver {
             System.out.println("GetAllRents Request ...");
             try {
                 List<Rent> rents = (List<Rent>) server.getAllRents(); // returns List<Rent>
+
+                System.out.println("→ Construiesc RentDTO:");
+                for (Rent r : rents) {
+                    System.out.println("  Rent id = " + r.getId());
+                }
+
                 List<RentDTO> rentDTOs = rents.stream()
                         .map(DTOUtils::getDTO)
                         .collect(Collectors.toList());
+
+                for (RentDTO dto : rentDTOs) {
+                    System.out.println("  DTO rezultat = " + dto.getId());
+                }
+
+
 
                 return new Response.Builder()
                         .type(ResponseType.SEND_ALL_RENTS)
@@ -199,6 +211,28 @@ public class AplicatieClientRpcWorker implements Runnable, IObserver {
 
 
         }
+
+        if (request.type() == RequestType.RETURN_BOOK) {
+            System.out.println("ReturnBook Request ...");
+
+            int rentId = (Integer) request.data();
+
+            try {
+                server.returnBook(rentId);
+
+                return new Response.Builder()
+                        .type(ResponseType.OK)
+                        .data(null)
+                        .build(); // răspuns OK
+            } catch (AppException e)
+            {
+                return new Response.Builder()
+                        .type(ResponseType.ERROR)
+                        .data(e.getMessage())
+                        .build();
+            }
+        }
+
         return response;
     }
 
@@ -252,9 +286,5 @@ public class AplicatieClientRpcWorker implements Runnable, IObserver {
             e.printStackTrace();
         }
     }
-
-
-
-
 
 }

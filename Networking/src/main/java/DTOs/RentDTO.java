@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class RentDTO implements Serializable {
-    private int id;
+    public int id;
     private UserDTO userDTO;
     private BookCopyDTO bookCopyDTO;
     private LocalDate startDate;
@@ -47,16 +47,18 @@ public class RentDTO implements Serializable {
         return status;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
-    public String toString() {
-        return "RentDTO{" +
-                "id=" + id +
-                ", userDTO=" + userDTO +
-                ", bookCopyDTO=" + bookCopyDTO +
+    public String toString()
+    {
+        return  "user=" + userDTO.getName() +
+                ", bookCopy=" + bookCopyDTO.getBook() +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", status='" + status + '\'' +
-                '}';
+                ", status='" + status + '\'';
     }
 }
 
