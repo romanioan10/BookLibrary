@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="AdminController" prefWidth="700" prefHeight="400">
+    <children>
+        <ListView fx:id="rentListView" layoutX="14.0" layoutY="14.0" prefHeight="320.0" prefWidth="670.0" />
+        <Button fx:id="returnButton" layoutX="14.0" layoutY="345.0"
+                prefHeight="30.0" prefWidth="670.0"
+                text="Marchează ca returnată" onAction="#handleReturn"/>
+    </children>
+</AnchorPane>

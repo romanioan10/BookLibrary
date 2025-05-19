@@ -22,14 +22,10 @@ public class UserDTO implements Serializable
 
     @Override
     public String toString() {
-        return "UserDTO{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
+        return
+                "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", role=" + role +
-                '}';
+                ", role=" + role;
     }
 
     public int getId()

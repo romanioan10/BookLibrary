@@ -269,6 +269,21 @@ public class AplicatieServicesRpcProxy implements IService {
         return DTOUtils.getFromBookCopyDTO(dto);
     }
 
+    @Override
+    public void returnBook(int rentId) throws AppException {
+        Request req = new Request.Builder()
+                .type(RequestType.RETURN_BOOK)
+                .data(rentId)
+                .build();
+
+        sendRequest(req);
+        Response response = readResponse();
+
+        if (response.type() == ResponseType.ERROR) {
+            throw new AppException(response.data().toString());
+        }
+    }
+
     private void handleUpdate(Response response) throws AppException {
         if (client == null) {
             System.out.println("Ignoring update because client (observer) is not yet set.");
@@ -293,7 +308,7 @@ public class AplicatieServicesRpcProxy implements IService {
                         .toList();
 
                 System.out.println("Proxy received RENTS_UPDATE with " + rents.size() + " entries");
-                client.updateRents(rents);  // APELĂM OBSERVERUL
+                client.updateRents(rents);
             }
 
             default -> System.out.println("Unhandled update type: " + response.type());

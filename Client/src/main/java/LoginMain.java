@@ -74,28 +74,44 @@ public class LoginMain {
                 alert.setHeaderText("Please fill in all fields");
                 alert.showAndWait();
             } else {
-                // 1. Creează user temporar cu doar username și parolă
-                User user = new User(usernameField.getText(), passwordField.getText());
+                User tempUser = new User(usernameField.getText(), passwordField.getText());
 
                 try {
-                    // 2. Încarcă FXML și controllerul
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
-                    Scene homeScene = new Scene(loader.load());
+                    User loggedInUser = service.login(tempUser, null);
 
-                    HomeController homeController = loader.getController();
+                    FXMLLoader loader;
+                    Scene sceneToShow;
+                    Stage nextStage = new Stage();
 
-                    // 3. Autentificare: trimite controllerul ca observer și primește user completat
-                    user = service.login(user, homeController);  // <-- ID-ul și celelalte câmpuri sunt acum setate
+                    if (loggedInUser.getRole() == 0)
+                    {
+                        loader = new FXMLLoader(getClass().getResource("home.fxml"));
+                        sceneToShow = new Scene(loader.load());
 
-                    // 4. Transmite user-ul corect în controller
-                    homeController.setService(service, user);
+                        HomeController controller = loader.getController();
 
-                    // 5. Deschide aplicația principală
+                        service.logout(loggedInUser);
+                        loggedInUser = service.login(loggedInUser, controller);
+                        controller.setService(service, loggedInUser);
+
+                        nextStage.setTitle("Biblioteca Online - Cititor");
+
+                    } else
+                    {
+                        loader = new FXMLLoader(getClass().getResource("admin_view.fxml"));
+                        sceneToShow = new Scene(loader.load());
+
+                        AdminController controller = loader.getController();
+                        service.logout(loggedInUser);
+                        loggedInUser = service.login(loggedInUser, controller);
+                        controller.setService(service, loggedInUser);
+
+                        nextStage.setTitle("Interfata Bibliotecar - Returnari");
+                    }
+
                     primaryStage.close();
-                    Stage homeStage = new Stage();
-                    homeStage.setScene(homeScene);
-                    homeStage.setTitle("Biblioteca Online");
-                    homeStage.show();
+                    nextStage.setScene(sceneToShow);
+                    nextStage.show();
 
                 } catch (AppException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -108,5 +124,6 @@ public class LoginMain {
                 }
             }
         });
+
     }
 }

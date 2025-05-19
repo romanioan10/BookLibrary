@@ -2,11 +2,9 @@ package Domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Rent extends Entity implements Serializable
 {
-    private int id;
     private User user;
     private BookCopy book;
     private LocalDate startDate;
@@ -33,6 +31,9 @@ public class Rent extends Entity implements Serializable
         this.status = status;
     }
 
+    public Rent(int id) {
+        this.id = id;
+    }
     public User getUser() {
         return user;
     }

@@ -24,13 +24,15 @@ public class BookCopyDTO implements Serializable {
         return status;
     }
 
+    public BookDTO getBook() {
+        return book;
+    }
+
     @Override
     public String toString() {
-        return "BookCopyDTO{" +
-                "id=" + id +
-                ", book=" + book +
-                ", status='" + status + '\'' +
-                '}';
+        return
+                "book=" + book +
+                ", status='" + status + '\'';
     }
 
 

@@ -75,17 +75,27 @@ public class RentRepository implements IRentRepository
     }
 
     @Override
-    public void remove(Integer integer)
-    {
-        Connection con = dbUtils.getConnection();
-        try (PreparedStatement preStmt = con.prepareStatement("delete from Rent where id_rent=?")) {
-            preStmt.setInt(1, integer);
-            preStmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Error DB " + e);
-        }
+    public void remove(Integer id) {
+        String sql = "DELETE FROM Rent WHERE id_rent = ?";
 
+        try (Connection con = dbUtils.getConnection();
+             PreparedStatement preStmt = con.prepareStatement(sql)) {
+
+            preStmt.setInt(1, id);
+            int rowsAffected = preStmt.executeUpdate();
+
+            if (rowsAffected == 0) {
+                System.err.println("[RentRepository]  No rent found with ID: " + id);
+            } else {
+                System.out.println("[RentRepository] Rent with ID " + id + " removed successfully.");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("[RentRepository] Error deleting rent: " + e.getMessage());
+            throw new RuntimeException("Error deleting rent with ID " + id, e);
+        }
     }
+
 
     @Override
     public Rent findOne(Integer integer)
@@ -116,7 +126,9 @@ public class RentRepository implements IRentRepository
         Connection con = dbUtils.getConnection();
         List<Rent> rents = new ArrayList<>();
 
-        try (PreparedStatement preStmt = con.prepareStatement("SELECT * FROM Rent")) {
+        try (PreparedStatement preStmt = con.prepareStatement(
+                "SELECT id_rent, id_user, id_book_copy, start_date, end_date, status FROM Rent"
+        );) {
             ResultSet resultSet = preStmt.executeQuery();
             while (resultSet.next()) {
                 int userId = resultSet.getInt("id_user");
@@ -132,14 +144,16 @@ public class RentRepository implements IRentRepository
                     System.out.println("Warning: book in bookCopy is null for ID " + bookCopyId);
                 }
 
+                int id = resultSet.getInt("id_rent");  //  Verifică dacă există exact această coloană
                 Rent rent = new Rent(user, bookCopy, startDate, endDate, status);
-                rent.setId(resultSet.getInt("id_rent"));
+                rent.setId(id);
+                System.out.println("↪ ResultSet ID = " + id);  // TREBUIE să fie != 0
+
                 rents.add(rent);
             }
         } catch (SQLException e) {
             System.out.println("Error DB: " + e);
         }
-
         return rents;
     }
 

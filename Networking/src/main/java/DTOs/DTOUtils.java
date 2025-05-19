@@ -75,6 +75,8 @@ public class DTOUtils {
     }
 
 
+
+
     public static RentDTO getDTO(Rent rent) {
         int id = rent.getId();
         UserDTO userDTO = getDTO(rent.getUser());
@@ -83,19 +85,26 @@ public class DTOUtils {
         LocalDate endDate = rent.getEndDate();
         String status = rent.getStatus();
         return new RentDTO(id, userDTO, bookCopyDTO, startDate, endDate, status);
+
     }
 
+
     public static Rent getFromRentDTO(RentDTO dto) {
-        int id = dto.getId();
+        int id = dto.id;
         User user = getFromUserDTO(dto.getUserDTO());
         BookCopy bookCopy = getFromBookCopyDTO(dto.getBookCopyDTO());
         LocalDate startDate = dto.getStartDate();
         LocalDate endDate = dto.getEndDate();
         String status = dto.getStatus();
-        Rent rent = new Rent(user, bookCopy, startDate, endDate, status);
-        rent.setId(id);
+        Rent rent = new Rent(id);
+        rent.setUser(user);
+        rent.setBookCopy(bookCopy);
+        rent.setStartDate(startDate);
+        rent.setEndDate(endDate);
+        rent.setStatus(status);
         return rent;
     }
+
 
 
 
